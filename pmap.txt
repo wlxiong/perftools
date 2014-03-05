@@ -1,0 +1,74 @@
+11120:   /usr/local/gfs/bin/chunk_server -d
+Address           Kbytes     RSS   Dirty Mode   Mapping
+0000000000400000    1624     812       0 r-x--  chunk_server
+0000000000796000      32      32      32 rw---  chunk_server
+000000000079e000       4       4       4 rw---    [ anon ]
+0000000005631000     400     292     292 rw---    [ anon ]
+00000000406c5000       4       0       0 -----    [ anon ]
+00000000406c6000   10240      12      12 rw---    [ anon ]
+00000000413cc000       4       0       0 -----    [ anon ]
+00000000413cd000   10240      20      20 rw---    [ anon ]
+0000000041dcd000       4       0       0 -----    [ anon ]
+0000000041dce000   10240      16      16 rw---    [ anon ]
+00000000427ce000       4       0       0 -----    [ anon ]
+00000000427cf000   10240       8       8 rw---    [ anon ]
+00000000431cf000       4       0       0 -----    [ anon ]
+00000000431d0000   10240       8       8 rw---    [ anon ]
+0000000043bd0000       4       0       0 -----    [ anon ]
+0000000043bd1000   10240    1164    1164 rw---    [ anon ]
+00002aaaaaaab000 1537924   49168   49168 rw---    [ anon ]
+00002aab0888c000    4096       4       0 rw-s-  chunk_server_cmd.log
+00002aab08c8c000   92168   90116   90116 rw---    [ anon ]
+00002aab0e699000      40      24       0 r-x--  libnss_files-2.5.so
+00002aab0e6a3000    2044       0       0 -----  libnss_files-2.5.so
+00002aab0e8a2000       4       4       4 r----  libnss_files-2.5.so
+00002aab0e8a3000       4       4       4 rw---  libnss_files-2.5.so
+00002aab0e8a4000  104756   44416   44416 rw---    [ anon ]
+00002aab14efc000      16      16       0 r-x--  libnss_dns-2.5.so
+00002aab14f00000    2044       0       0 -----  libnss_dns-2.5.so
+00002aab150ff000       4       4       4 r----  libnss_dns-2.5.so
+00002aab15100000       4       4       4 rw---  libnss_dns-2.5.so
+00002aab15101000      68      40       0 r-x--  libresolv-2.5.so
+00002aab15112000    2048       0       0 -----  libresolv-2.5.so
+00002aab15312000       4       4       4 r----  libresolv-2.5.so
+00002aab15313000       4       4       4 rw---  libresolv-2.5.so
+00002aab15314000       8       4       0 rw---    [ anon ]
+00002b8bfd1cf000     112      84       0 r-x--  ld-2.5.so
+00002b8bfd1eb000      32      12      12 rw---    [ anon ]
+00002b8bfd3eb000       4       4       4 r----  ld-2.5.so
+00002b8bfd3ec000       4       4       4 rw---  ld-2.5.so
+00002b8bfd3ed000     552     400       0 r-x--  liblog4cplus.so.2.0.0
+00002b8bfd477000    2044       0       0 -----  liblog4cplus.so.2.0.0
+00002b8bfd676000      24      24      24 rw---  liblog4cplus.so.2.0.0
+00002b8bfd67c000      88      76       0 r-x--  libpthread-2.5.so
+00002b8bfd692000    2044       0       0 -----  libpthread-2.5.so
+00002b8bfd891000       4       4       4 r----  libpthread-2.5.so
+00002b8bfd892000       4       4       4 rw---  libpthread-2.5.so
+00002b8bfd893000      16       4       4 rw---    [ anon ]
+00002b8bfd897000     920     408       0 r-x--  libstdc++.so.6.0.8
+00002b8bfd97d000    2044       0       0 -----  libstdc++.so.6.0.8
+00002b8bfdb7c000      24      24      24 r----  libstdc++.so.6.0.8
+00002b8bfdb82000      12      12      12 rw---  libstdc++.so.6.0.8
+00002b8bfdb85000      76      16      16 rw---    [ anon ]
+00002b8bfdb98000     520      12       0 r-x--  libm-2.5.so
+00002b8bfdc1a000    2044       0       0 -----  libm-2.5.so
+00002b8bfde19000       4       4       4 r----  libm-2.5.so
+00002b8bfde1a000       4       4       4 rw---  libm-2.5.so
+00002b8bfde1b000      52      36       0 r-x--  libgcc_s-4.1.2-20080825.so.1.#prelink#.khL565 (deleted)
+00002b8bfde28000    2048       0       0 -----  libgcc_s-4.1.2-20080825.so.1.#prelink#.khL565 (deleted)
+00002b8bfe028000       4       4       4 rw---  libgcc_s-4.1.2-20080825.so.1.#prelink#.khL565 (deleted)
+00002b8bfe029000    1340     500       0 r-x--  libc-2.5.so
+00002b8bfe178000    2044       0       0 -----  libc-2.5.so
+00002b8bfe377000      16      16      16 r----  libc-2.5.so
+00002b8bfe37b000       4       4       4 rw---  libc-2.5.so
+00002b8bfe37c000      24      24      24 rw---    [ anon ]
+00002b8bfe382000      28       8       0 r-x--  librt-2.5.so
+00002b8bfe389000    2048       0       0 -----  librt-2.5.so
+00002b8bfe589000       4       4       4 r----  librt-2.5.so
+00002b8bfe58a000       4       4       4 rw---  librt-2.5.so
+00002b8bfe58b000       8       8       8 rw---    [ anon ]
+00007fffca834000      84      32      32 rw---    [ stack ]
+00007fffca9fd000      12       4       0 r-x--    [ anon ]
+ffffffffff600000    8192       0       0 -----    [ anon ]
+----------------  ------  ------  ------
+total kB         1835248  187920  185492
