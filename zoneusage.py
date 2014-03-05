@@ -52,10 +52,12 @@ def zone_usage(mallocs, zones):
             addr, size, rss, dirty, mode, mapping = record
             rem_size = size if 'rw' in mode else 0
             zone_mode = mode
-            print "%016X,\t%12d,\t%12s,\t%12s,\t%6s,\t%s" % (addr, size, rss, dirty, mode, mapping)
+            if 'rw' in mode:
+                print "%016X,\t%12d,\t%12s,\t%12s,\t%6s,\t%s" % (addr, size, rss, dirty, mode, mapping)
         if len(record) == 3:
             addr, size, caller = record
             rem_size -= size
+            assert rem_size >= 0, "Error in malloc calls"
             print "%016X,\t%12d,\t%12s,\t%12s,\t%6s,\t%s" % (addr, size, '-', '-', zone_mode, caller)
 
 

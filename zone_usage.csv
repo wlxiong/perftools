@@ -1,5 +1,4 @@
          Address,	       Bytes,	         RSS,	       Dirty,	  Mode,	Mapping
-0000000000400000,	     1662976,	         812,	           0,	 r-x--,	chunk_server
 0000000000796000,	       32768,	          32,	          32,	 rw---,	chunk_server
    [unallocated],	       32768,	           -,	           -,	     -,	-
 000000000079E000,	        4096,	           4,	           4,	 rw---,	[ anon ]
@@ -975,22 +974,16 @@
 00000000056896A0,	        1544,	           -,	           -,	 rw---,	0x2b8bfd9541dd
 0000000005689CB0,	        1544,	           -,	           -,	 rw---,	0x2b8bfd9541dd
    [unallocated],	       82269,	           -,	           -,	     -,	-
-00000000406C5000,	        4096,	           0,	           0,	 -----,	[ anon ]
 00000000406C6000,	    10485760,	          12,	          12,	 rw---,	[ anon ]
    [unallocated],	    10485760,	           -,	           -,	     -,	-
-00000000413CC000,	        4096,	           0,	           0,	 -----,	[ anon ]
 00000000413CD000,	    10485760,	          20,	          20,	 rw---,	[ anon ]
    [unallocated],	    10485760,	           -,	           -,	     -,	-
-0000000041DCD000,	        4096,	           0,	           0,	 -----,	[ anon ]
 0000000041DCE000,	    10485760,	          16,	          16,	 rw---,	[ anon ]
    [unallocated],	    10485760,	           -,	           -,	     -,	-
-00000000427CE000,	        4096,	           0,	           0,	 -----,	[ anon ]
 00000000427CF000,	    10485760,	           8,	           8,	 rw---,	[ anon ]
    [unallocated],	    10485760,	           -,	           -,	     -,	-
-00000000431CF000,	        4096,	           0,	           0,	 -----,	[ anon ]
 00000000431D0000,	    10485760,	           8,	           8,	 rw---,	[ anon ]
    [unallocated],	    10485760,	           -,	           -,	     -,	-
-0000000043BD0000,	        4096,	           0,	           0,	 -----,	[ anon ]
 0000000043BD1000,	    10485760,	        1164,	        1164,	 rw---,	[ anon ]
    [unallocated],	    10485760,	           -,	           -,	     -,	-
 00002AAAAAAAB000,	  1574834176,	       49168,	       49168,	 rw---,	[ anon ]
@@ -1012,9 +1005,6 @@
 00002AAB0A48C010,	     2097160,	           -,	           -,	 rw---,	0x2b8bfd9541dd
 00002AAB0A68D010,	    67108864,	           -,	           -,	 rw---,	/home/vagrant/workspace/gfs-3.6/chunk_server/../lib/appframe/fixed_size_allocator.h:51
    [unallocated],	       21960,	           -,	           -,	     -,	-
-00002AAB0E699000,	       40960,	          24,	           0,	 r-x--,	libnss_files-2.5.so
-00002AAB0E6A3000,	     2093056,	           0,	           0,	 -----,	libnss_files-2.5.so
-00002AAB0E8A2000,	        4096,	           4,	           4,	 r----,	libnss_files-2.5.so
 00002AAB0E8A3000,	        4096,	           4,	           4,	 rw---,	libnss_files-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
 00002AAB0E8A4000,	   107270144,	       44416,	       44416,	 rw---,	[ anon ]
@@ -1028,66 +1018,37 @@
 00002AAB11372010,	    62184000,	           -,	           -,	 rw---,	/home/vagrant/workspace/gfs-3.6/chunk_server/../lib/appframe/array_object_pool.hpp:46
 00002AAB14EC0010,	      196608,	           -,	           -,	 rw---,	/home/vagrant/workspace/gfs-3.6/lib/gce/xsocket/../../../lib/appframe/array_object_pool.hpp:46
    [unallocated],	       29736,	           -,	           -,	     -,	-
-00002AAB14EFC000,	       16384,	          16,	           0,	 r-x--,	libnss_dns-2.5.so
-00002AAB14F00000,	     2093056,	           0,	           0,	 -----,	libnss_dns-2.5.so
-00002AAB150FF000,	        4096,	           4,	           4,	 r----,	libnss_dns-2.5.so
 00002AAB15100000,	        4096,	           4,	           4,	 rw---,	libnss_dns-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
-00002AAB15101000,	       69632,	          40,	           0,	 r-x--,	libresolv-2.5.so
-00002AAB15112000,	     2097152,	           0,	           0,	 -----,	libresolv-2.5.so
-00002AAB15312000,	        4096,	           4,	           4,	 r----,	libresolv-2.5.so
 00002AAB15313000,	        4096,	           4,	           4,	 rw---,	libresolv-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
 00002AAB15314000,	        8192,	           4,	           0,	 rw---,	[ anon ]
    [unallocated],	        8192,	           -,	           -,	     -,	-
-00002B8BFD1CF000,	      114688,	          84,	           0,	 r-x--,	ld-2.5.so
 00002B8BFD1EB000,	       32768,	          12,	          12,	 rw---,	[ anon ]
    [unallocated],	       32768,	           -,	           -,	     -,	-
-00002B8BFD3EB000,	        4096,	           4,	           4,	 r----,	ld-2.5.so
 00002B8BFD3EC000,	        4096,	           4,	           4,	 rw---,	ld-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
-00002B8BFD3ED000,	      565248,	         400,	           0,	 r-x--,	liblog4cplus.so.2.0.0
-00002B8BFD477000,	     2093056,	           0,	           0,	 -----,	liblog4cplus.so.2.0.0
 00002B8BFD676000,	       24576,	          24,	          24,	 rw---,	liblog4cplus.so.2.0.0
    [unallocated],	       24576,	           -,	           -,	     -,	-
-00002B8BFD67C000,	       90112,	          76,	           0,	 r-x--,	libpthread-2.5.so
-00002B8BFD692000,	     2093056,	           0,	           0,	 -----,	libpthread-2.5.so
-00002B8BFD891000,	        4096,	           4,	           4,	 r----,	libpthread-2.5.so
 00002B8BFD892000,	        4096,	           4,	           4,	 rw---,	libpthread-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
 00002B8BFD893000,	       16384,	           4,	           4,	 rw---,	[ anon ]
    [unallocated],	       16384,	           -,	           -,	     -,	-
-00002B8BFD897000,	      942080,	         408,	           0,	 r-x--,	libstdc++.so.6.0.8
-00002B8BFD97D000,	     2093056,	           0,	           0,	 -----,	libstdc++.so.6.0.8
-00002B8BFDB7C000,	       24576,	          24,	          24,	 r----,	libstdc++.so.6.0.8
 00002B8BFDB82000,	       12288,	          12,	          12,	 rw---,	libstdc++.so.6.0.8
    [unallocated],	       12288,	           -,	           -,	     -,	-
 00002B8BFDB85000,	       77824,	          16,	          16,	 rw---,	[ anon ]
    [unallocated],	       77824,	           -,	           -,	     -,	-
-00002B8BFDB98000,	      532480,	          12,	           0,	 r-x--,	libm-2.5.so
-00002B8BFDC1A000,	     2093056,	           0,	           0,	 -----,	libm-2.5.so
-00002B8BFDE19000,	        4096,	           4,	           4,	 r----,	libm-2.5.so
 00002B8BFDE1A000,	        4096,	           4,	           4,	 rw---,	libm-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
-00002B8BFDE1B000,	       53248,	          36,	           0,	 r-x--,	libgcc_s-4.1.2-20080825.so.1.#prelink#.khL565 (deleted)
-00002B8BFDE28000,	     2097152,	           0,	           0,	 -----,	libgcc_s-4.1.2-20080825.so.1.#prelink#.khL565 (deleted)
 00002B8BFE028000,	        4096,	           4,	           4,	 rw---,	libgcc_s-4.1.2-20080825.so.1.#prelink#.khL565 (deleted)
    [unallocated],	        4096,	           -,	           -,	     -,	-
-00002B8BFE029000,	     1372160,	         500,	           0,	 r-x--,	libc-2.5.so
-00002B8BFE178000,	     2093056,	           0,	           0,	 -----,	libc-2.5.so
-00002B8BFE377000,	       16384,	          16,	          16,	 r----,	libc-2.5.so
 00002B8BFE37B000,	        4096,	           4,	           4,	 rw---,	libc-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
 00002B8BFE37C000,	       24576,	          24,	          24,	 rw---,	[ anon ]
    [unallocated],	       24576,	           -,	           -,	     -,	-
-00002B8BFE382000,	       28672,	           8,	           0,	 r-x--,	librt-2.5.so
-00002B8BFE389000,	     2097152,	           0,	           0,	 -----,	librt-2.5.so
-00002B8BFE589000,	        4096,	           4,	           4,	 r----,	librt-2.5.so
 00002B8BFE58A000,	        4096,	           4,	           4,	 rw---,	librt-2.5.so
    [unallocated],	        4096,	           -,	           -,	     -,	-
 00002B8BFE58B000,	        8192,	           8,	           8,	 rw---,	[ anon ]
    [unallocated],	        8192,	           -,	           -,	     -,	-
 00007FFFCA834000,	       86016,	          32,	          32,	 rw---,	[ stack ]
    [unallocated],	       86016,	           -,	           -,	     -,	-
-00007FFFCA9FD000,	       12288,	           4,	           0,	 r-x--,	[ anon ]
-FFFFFFFFFF600000,	     8388608,	           0,	           0,	 -----,	[ anon ]
