@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-#include <unordered_map>
+#include <map>
 #include "addr2line.h"
 using namespace std;
 
@@ -53,8 +53,8 @@ int main(int argc, char* argv[]) {
     fprintf(stderr, "Sampling period, in microseconds: %llu\n", sampling_period);
     char record_header[PSIZE*2];
     int num_matched = 0;
-    unordered_map<INT_TYPE, char*> addr2func;
-    unordered_map<INT_TYPE, char*>::iterator it;
+    map<INT_TYPE, char*> addr2func;
+    map<INT_TYPE, char*>::iterator it;
     while(1) {
         if (fread(record_header, PSIZE*2, 1, profile) < 1) {
             fprintf(stderr, "Cannot read profile record header");
@@ -77,10 +77,12 @@ int main(int argc, char* argv[]) {
         for (j = 0; j < num_call; j++) {
             pc = *(INT_TYPE*) &call_pc[j*PSIZE];
             // fprintf(stderr, "%llx\n", pc);
-            func = addr2func.at(pc);
-            if (func == std::out_of_range) {
+            it = addr2func.find(pc);
+            if (it == addr2func.end()) {
                 libtrace_resolve((void *)pc, func, FUNC_MAX, file, PATH_MAX);
                 addr2func.insert(make_pair(pc, strdup(func)));
+            } else {
+                func = it->second;
             }
             for (i = 0; i < num_sym; i++) {
                 if (strcmp(func, syms[i]) == 0) {
