@@ -6,28 +6,24 @@
 
 #define PSIZE 8
 #define INT_TYPE unsigned long long
+#define FUNC_MAX (PATH_MAX)
 
 int main(int argc, char* argv[]) {
 
     if (argc < 4) {
-        fprintf(stderr, "Usage: %s <program> <profile file> <symbols...>", argv[0]);
+        fprintf(stderr, "Usage: %s <program> <profile file> <symbols...>\n", argv[0]);
         exit(1);
     }
+
     char *program_name = argv[1];
     const char *section_name = NULL;
     char *target = NULL;
-    #define FUNC_MAX (PATH_MAX)
     if (0 != libtrace_init(program_name, section_name, target)) {
         fprintf(stderr, "Cannot initialize libtrace");
         exit(5);
     }
     char  func[FUNC_MAX+1] = {0};
     char  file[PATH_MAX+1] = {0}; 
-    // for (i = 0; i < addrc; i++) {
-    //     sscanf(addrs, "%p", &sym);
-    //     libtrace_resolve(sym, func, FUNC_MAX, file, PATH_MAX);
-    //     printf("%s [%s]\n", func, file);
-    // }
 
     int i, num_sym = argc - 3;
     char **syms = &argv[3];

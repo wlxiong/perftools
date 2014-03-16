@@ -20,10 +20,10 @@ LIBCTRACE_LDFLAGS = -shared $(BINUTILS_LDFLAGS) -ldl -lc
 
 all: profile-filter
 
-profile-filter: addr2line.c addr2line.h profile-filter.c
-	$(CC) -o $@ $< $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
+profile-filter: addr2line.o profile-filter.o addr2line.h
+	$(CC) -g -o $@ addr2line.c profile-filter.c $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
 
-%.o: %.c $(LIBCTRACE_HEADERS) Makefile
+%.o: %.c $(LIBCTRACE_HEADERS)
 	$(CC) $(LIBCTRACE_CFLAGS) -c $< -o $@
 
 clean:
