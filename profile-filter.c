@@ -1,23 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
+#include "addr2line.h"
 
 #define PSIZE 8
 #define INT_TYPE unsigned long long
 
 int main(int argc, char* argv[]) {
 
-    if (argc < 3) {
-        fprintf(stderr, "Usage: %s <profile file> <address...>", argv[0]);
+    if (argc < 4) {
+        fprintf(stderr, "Usage: %s <program> <profile file> <symbols...>", argv[0]);
         exit(1);
     }
-    int i, num_addr = argc - 2;
-    INT_TYPE *addr = (INT_TYPE*) malloc(num_addr * sizeof(INT_TYPE));
-    for (i = 0; i < num_addr; i++) {
-        sscanf(argv[2 + i], "%llx", &addr[i]);
-        fprintf(stderr, "Remove stack traces including address: %llx\n", addr[i]);
+    char *program_name = argv[1];
+    const char *section_name = NULL;
+    char *target = NULL;
+    #define FUNC_MAX (PATH_MAX)
+    if (0 != libtrace_init(program_name, section_name, target)) {
+        fprintf(stderr, "Cannot initialize libtrace");
+        exit(5);
     }
-    FILE* profile = fopen(argv[1], "r");
+    char  func[FUNC_MAX+1] = {0};
+    char  file[PATH_MAX+1] = {0}; 
+    // for (i = 0; i < addrc; i++) {
+    //     sscanf(addrs, "%p", &sym);
+    //     libtrace_resolve(sym, func, FUNC_MAX, file, PATH_MAX);
+    //     printf("%s [%s]\n", func, file);
+    // }
+
+    int i, num_sym = argc - 3;
+    char **syms = &argv[3];
+    for (i = 0; i < num_sym; i++) {
+        fprintf(stderr, "Remove stack traces including symbol: %s\n", syms[i]);
+    }
+
+    FILE* profile = fopen(argv[2], "r");
     char header[PSIZE*2];
     if (fread(header, PSIZE*2, 1, profile) < 1) {
         fprintf(stderr, "Cannot read the first two headers");
@@ -59,8 +77,9 @@ int main(int argc, char* argv[]) {
         for (j = 0; j < num_call; j++) {
             pc = *(INT_TYPE*) &call_pc[j*PSIZE];
             // fprintf(stderr, "%llx\n", pc);
-            for (i = 0; i < num_addr; i++) {
-                if (pc == addr[i]) {
+            libtrace_resolve((void *)pc, func, FUNC_MAX, file, PATH_MAX);
+            for (i = 0; i < num_sym; i++) {
+                if (strcmp(func, syms[i]) == 0) {
                     matched = 1;
                     num_matched++;
                     goto has_matched;
@@ -81,6 +100,7 @@ int main(int argc, char* argv[]) {
         fputc(c, stdout);
     }
 
+    libtrace_close();
     fclose(profile);
 
     return 0;
