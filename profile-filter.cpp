@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
                 libtrace_resolve((void *)pc, func, FUNC_MAX, file, PATH_MAX);
                 addr2func.insert(make_pair(pc, strdup(func)));
             } else {
-                func = it->second;
+                strcpy(func, it->second);
             }
             for (i = 0; i < num_sym; i++) {
                 if (strcmp(func, syms[i]) == 0) {
