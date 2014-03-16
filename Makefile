@@ -20,13 +20,13 @@ LIBCTRACE_LDFLAGS = -shared $(BINUTILS_LDFLAGS) -ldl -lc
 all: profile-filter addr2line
 
 addr2line: addr2line.o
-	$(CXX) -DMAIN_FUNC -o $@ $< $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
+	$(CC) -DMAIN_FUNC -o $@ $< $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
 
 profile-filter: addr2line.o profile-filter.o addr2line.h
 	$(CXX) -g -o $@ addr2line.o profile-filter.o $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS)
 
 %.o: %.c $(LIBCTRACE_HEADERS)
-	$(CXX) $(LIBCTRACE_CFLAGS) -c $< -o $@
+	$(CC) $(LIBCTRACE_CFLAGS) -c $< -o $@
 
 %.o: %.cpp $(LIBCTRACE_HEADERS)
 	$(CXX) $(LIBCTRACE_CFLAGS) -c $< -o $@
