@@ -33,3 +33,4 @@ profile-filter: addr2line.o profile-filter.o addr2line.h
 
 clean:
 	rm -f *.o profile-filter addr2line
+	rm -f *.s *.ss *.ii *.i
