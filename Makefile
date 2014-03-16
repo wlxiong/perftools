@@ -18,7 +18,10 @@ LIBCTRACE_CFLAGS  = -g -Wall -fPIC -I. $(BINUTILS_CFLAGS) -save-temps $(STRESS_F
 LIBCTRACE_LDFLAGS = -shared $(BINUTILS_LDFLAGS) -ldl -lc
 
 
-all: profile-filter
+all: profile-filter addr2line
+
+addr2line: addr2line.c
+	$(CC) -DMAIN_FUNC -o $@ $< $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
 
 profile-filter: addr2line.o profile-filter.o addr2line.h
 	$(CC) -g -o $@ addr2line.c profile-filter.c $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
@@ -27,4 +30,4 @@ profile-filter: addr2line.o profile-filter.o addr2line.h
 	$(CC) $(LIBCTRACE_CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o profile-filter
+	rm -f *.o profile-filter addr2line
