@@ -63,8 +63,8 @@ int main(int argc, char* argv[]) {
 
         INT_TYPE sample_count = *(INT_TYPE*) &record_header[0];
         INT_TYPE num_call = *(INT_TYPE*) &record_header[PSIZE];
-        int j, matched = 0;
-        INT_TYPE pc;
+        int matched = 0;
+        INT_TYPE pc, j;
         char* call_pc = (char*) malloc(PSIZE*num_call);
         fread(call_pc, PSIZE, num_call, profile);
         pc = *(INT_TYPE*) &call_pc[0];
