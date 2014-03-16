@@ -19,7 +19,7 @@ LIBCTRACE_LDFLAGS = -shared $(BINUTILS_LDFLAGS) -ldl -lc
 
 all: profile-filter addr2line
 
-addr2line: addr2line.o
+addr2line: addr2line.c
 	$(CC) -DMAIN_FUNC -o $@ $< $(BINUTILS_CFLAGS) $(BINUTILS_LDFLAGS) 
 
 profile-filter: addr2line.o profile-filter.o addr2line.h
